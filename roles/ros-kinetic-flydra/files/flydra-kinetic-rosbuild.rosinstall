@@ -1,0 +1,2 @@
+- git: {local-name: motmot_ros_stack, uri: 'https://github.com/motmot/motmot_ros_stack.git'}
+- git: {local-name: ros_fview_fmf_saver, uri: 'https://github.com/strawlab/ros_fview_fmf_saver.git'}

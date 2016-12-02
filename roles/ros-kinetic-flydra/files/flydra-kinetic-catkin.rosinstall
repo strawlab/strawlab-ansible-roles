@@ -1,0 +1,3 @@
+# This rosinstall file can be used to create a catkin workspace with flydra.
+- git: {local-name: ros_flydra, uri: 'https://github.com/strawlab/ros_flydra.git', version: kinetic}
+- git: {local-name: triggerbox, uri: 'https://github.com/strawlab/triggerbox.git', version: kinetic}
