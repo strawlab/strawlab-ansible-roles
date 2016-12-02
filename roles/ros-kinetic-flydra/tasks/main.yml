@@ -25,4 +25,4 @@
   apt: name=python-rosinstall state=installed
 
 - name: copy installer script
-  copy: src=user-install-ros-kinetic-flydra.sh dest=/opt/ros/user-install-ros-kinetic-flydra.sh owner=root group=root mode=0755
+  copy: src=make-flydra-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-flydra-workspace.sh owner=root group=root mode=0755

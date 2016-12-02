@@ -1,4 +1,4 @@
 ---
 dependencies:
-- { role: ros-kinetic }
-- { role: strawlab-public-debs }
+- { role: ros-kinetic-freemoovr-engine }
+- { role: ros-kinetic-flydra }

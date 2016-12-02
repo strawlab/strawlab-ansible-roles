@@ -6,8 +6,8 @@ if [ "$ROS_ROOT" != "" ]; then
     exit 1
 fi
 
-export UNDERLAY="/opt/ros/kinetic"
-export FREEMOOVR_CATKIN_TARGET="$HOME/ros/freemoovr-kinetic"
+UNDERLAY="/opt/ros/kinetic"
+FREEMOOVR_CATKIN_TARGET="$HOME/ros/freemoovr-engine-kinetic"
 
 source ${UNDERLAY}/setup.bash
 
@@ -18,7 +18,7 @@ if [  ! -d ${FREEMOOVR_CATKIN_TARGET} ]; then
   mkdir -p ${FREEMOOVR_CATKIN_TARGET}
   cd ${FREEMOOVR_CATKIN_TARGET}
   wstool init src
-  wstool merge -t src /etc/ros/freemoovr-kinetic.rosinstall
+  wstool merge -t src /etc/ros/freemoovr-engine-kinetic.rosinstall
   wstool update -t src
   catkin_make --pkg freemoovr || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
 
