@@ -8,7 +8,7 @@
     block: |
       function vr() {
         if [ -d ${HOME}/ros/freemoovr-kinetic/ ]; then
-          source ${HOME}/ros/freemoovr-kinetic/setup.bash
+          source ${HOME}/ros/freemoovr-kinetic/devel/setup.bash
         fi
       }
 
