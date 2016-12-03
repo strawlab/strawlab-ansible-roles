@@ -20,7 +20,7 @@ if [  ! -d ${FREEMOOVR_CATKIN_TARGET} ]; then
   wstool init src
   wstool merge -t src /etc/ros/freemoovr-engine-kinetic.rosinstall
   wstool update -t src
-  catkin_make --pkg freemoovr || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
+  catkin_make --pkg freemoovr_engine || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
 
   rosdep update
   source devel/setup.bash
