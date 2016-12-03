@@ -7,16 +7,13 @@
     marker: "# {mark} created by ansible 4bb8a80471de7"
     block: |
       function vr() {
-        if [ -d ${HOME}/ros/freemoovr-kinetic-rosbuild/ ]; then
-          source ${HOME}/ros/freemoovr-kinetic-rosbuild/setup.bash
+        if [ -d ${HOME}/ros/freemoovr-kinetic/ ]; then
+          source ${HOME}/ros/freemoovr-kinetic/setup.bash
         fi
       }
 
-- name: Ensure freemoovr-kinetic-catkin.rosinstall is available
-  copy: src=freemoovr-kinetic-catkin.rosinstall dest=/etc/ros/freemoovr-kinetic-catkin.rosinstall owner=root group=root mode=0644
-
-- name: Ensure vr-system-kinetic-rosbuild.rosinstall is available
-  copy: src=freemoovr-kinetic-rosbuild.rosinstall dest=/etc/ros/freemoovr-kinetic-rosbuild.rosinstall owner=root group=root mode=0644
+- name: Ensure freemoovr-kinetic.rosinstall is available
+  copy: src=freemoovr-kinetic.rosinstall dest=/etc/ros/freemoovr-kinetic.rosinstall owner=root group=root mode=0644
 
 - name: copy installer script
   copy: src=make-freemoovr-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-freemoovr-workspace.sh owner=root group=root mode=0755

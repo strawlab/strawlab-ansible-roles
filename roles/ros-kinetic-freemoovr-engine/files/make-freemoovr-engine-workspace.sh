@@ -24,7 +24,7 @@ if [  ! -d ${FREEMOOVR_CATKIN_TARGET} ]; then
 
   rosdep update
   source devel/setup.bash
-  rosdep install --default-yes freemoovr
+  rosdep install --default-yes --from-paths src --ignore-src
 
   catkin_make
 else

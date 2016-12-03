@@ -15,5 +15,8 @@
   # This is required for `wstool`
   apt: name=python-wstool state=installed
 
+- name: Ensure workspace installer dir exists
+  file: path=/opt/ros/workspace-installers/kinetic/ state=directory mode=0755 owner=root group=root
+
 - name: copy installer script
-  copy: src=make-freemoover-engine-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-freemoover-engine-workspace.sh owner=root group=root mode=0755
+  copy: src=make-freemoovr-engine-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-freemoovr-engine-workspace.sh owner=root group=root mode=0755

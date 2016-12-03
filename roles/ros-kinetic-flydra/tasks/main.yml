@@ -8,10 +8,7 @@
   copy: src=40-strawlab-kinetic.list dest=/etc/ros/rosdep/sources.list.d/40-strawlab-kinetic.list owner=root group=root mode=0644
 
 - name: Ensure flydra-kinetic-catkin.rosinstall is available
-  copy: src=flydra-kinetic-catkin.rosinstall dest=/etc/ros/flydra-kinetic-catkin.rosinstall owner=root group=root mode=0644
-
-- name: Ensure flydra-kinetic-rosbuild.rosinstall is available
-  copy: src=flydra-kinetic-rosbuild.rosinstall dest=/etc/ros/flydra-kinetic-rosbuild.rosinstall owner=root group=root mode=0644
+  copy: src=flydra-kinetic.rosinstall dest=/etc/ros/flydra-kinetic.rosinstall owner=root group=root mode=0644
 
 - name: install sudo command
   # This is required by `rosdep install`
@@ -23,6 +20,9 @@
 
 - name: install rosinstall command
   apt: name=python-rosinstall state=installed
+
+- name: Ensure workspace installer dir exists
+  file: path=/opt/ros/workspace-installers/kinetic/ state=directory mode=0755 owner=root group=root
 
 - name: copy installer script
   copy: src=make-flydra-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-flydra-workspace.sh owner=root group=root mode=0755
