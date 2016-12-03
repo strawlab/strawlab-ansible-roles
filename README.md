@@ -23,4 +23,4 @@ To run the playbook (installs flydra and freemoovr):
     source ~/ros/freemoovr-kinetic/devel/setup.bash
 
     # After this, you can run commands such as
-    roslaunch freemoovr demo_display_server.launch
+    roslaunch freemoovr_engine demo_display_server.launch
