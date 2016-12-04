@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - ros-indigo-freemoovr-engine
