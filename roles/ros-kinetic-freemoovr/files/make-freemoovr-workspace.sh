@@ -32,12 +32,9 @@ if [  ! -d ${VR_CATKIN_TARGET} ]; then
   # `source ${UNDERLAY}/setup.bash` puts this on the PATH. (Do not
   # install from the Ubuntu `catkin` package.)
   catkin_make --pkg freemoovr_engine || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
-
   rosdep update
-  source devel/setup.bash
-  rosdep install --default-yes --from-paths src --ignore-src
-
   catkin_make
+  source devel/setup.bash
 else
   echo "The directory at ${VR_CATKIN_TARGET} already exists, doing nothing."
 fi
