@@ -8,19 +8,19 @@ To install prerequisites:
 
     sudo apt-get install ansible
 
-To run the playbook (installs flydra and freemoovr):
+To run the playbook (installs flydra and freemovr):
 
     sudo ansible-playbook -i "localhost," -c local playbook.yml
 
-# Now, to create a ROS workspace for FreemooVR
+# Now, to create a ROS workspace for FreemoVR
 
     # Do this as a normal user
-    /opt/ros/workspace-installers/kinetic/make-freemoovr-workspace.sh
+    /opt/ros/workspace-installers/kinetic/make-freemovr-workspace.sh
 
     # Now you should have new directories in `~/ros` with everything installed.
-    # The top-level workspace is at `~/ros/freemoovr-kinetic`.
+    # The top-level workspace is at `~/ros/freemovr-kinetic`.
     # You can initiate your ROS environment with
-    source ~/ros/freemoovr-kinetic/devel/setup.bash
+    source ~/ros/freemovr-kinetic/devel/setup.bash
 
     # After this, you can run commands such as
-    roslaunch freemoovr_engine demo_display_server.launch
+    roslaunch freemovr_engine demo_display_server.launch

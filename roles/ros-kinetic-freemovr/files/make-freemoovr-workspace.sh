@@ -7,7 +7,7 @@ if [ "$ROS_ROOT" != "" ]; then
 fi
 
 UNDERLAY="/opt/ros/kinetic"
-VR_CATKIN_TARGET="$HOME/ros/freemoovr-kinetic"
+VR_CATKIN_TARGET="$HOME/ros/freemovr-kinetic"
 
 source ${UNDERLAY}/setup.bash
 CATKIN_MAKE_PATH=$(which catkin_make)
@@ -23,15 +23,15 @@ if [  ! -d ${VR_CATKIN_TARGET} ]; then
   mkdir -p ${VR_CATKIN_TARGET}
   cd ${VR_CATKIN_TARGET}
   wstool init src
-  wstool merge -t src /etc/ros/freemoovr-engine-kinetic.rosinstall
+  wstool merge -t src /etc/ros/freemovr-engine-kinetic.rosinstall
   wstool merge -t src /etc/ros/flydra-kinetic.rosinstall
-  wstool merge -t src /etc/ros/freemoovr-kinetic.rosinstall
+  wstool merge -t src /etc/ros/freemovr-kinetic.rosinstall
   wstool update -t src
 
   # `catkin_make` is installed with the `ros-kinetic-catkin` package.
   # `source ${UNDERLAY}/setup.bash` puts this on the PATH. (Do not
   # install from the Ubuntu `catkin` package.)
-  catkin_make --pkg freemoovr_engine || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
+  catkin_make --pkg freemovr_engine || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
   rosdep update
   catkin_make
   source devel/setup.bash

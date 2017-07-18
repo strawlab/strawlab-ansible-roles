@@ -4,8 +4,8 @@
 - name: Ensure strawlab rosdep URL is included into rosdep sources
   copy: src=35-strawlab-indigo.list dest=/etc/ros/rosdep/sources.list.d/35-strawlab-indigo.list owner=root group=root mode=0644
 
-- name: Ensure freemoovr-engine-indigo.rosinstall is available
-  copy: src=freemoovr-engine-indigo.rosinstall dest=/etc/ros/freemoovr-engine-indigo.rosinstall owner=root group=root mode=0644
+- name: Ensure freemovr-engine-indigo.rosinstall is available
+  copy: src=freemovr-engine-indigo.rosinstall dest=/etc/ros/freemovr-engine-indigo.rosinstall owner=root group=root mode=0644
 
 - name: install sudo command
   # This is required by `rosdep install`
@@ -19,4 +19,4 @@
   file: path=/opt/ros/workspace-installers/indigo/ state=directory mode=0755 owner=root group=root
 
 - name: copy installer script
-  copy: src=make-freemoovr-engine-workspace.sh dest=/opt/ros/workspace-installers/indigo/make-freemoovr-engine-workspace.sh owner=root group=root mode=0755
+  copy: src=make-freemovr-engine-workspace.sh dest=/opt/ros/workspace-installers/indigo/make-freemovr-engine-workspace.sh owner=root group=root mode=0755
