@@ -1,6 +1,15 @@
 #!/bin/bash -x
 set -o errexit
 
+if [ `which python` != "/usr/bin/python" ]; then
+  # I have had trouble if Anaconda Python is on the
+  # PATH and so here we check for that and abort early if so.
+  echo "ERROR: not using system Python, aborting installation"
+  exit 1
+else
+  echo "Using /usr/bin/python"
+fi
+
 if [ "$ROS_ROOT" != "" ]; then
     echo "ERROR: cannot run within existing ROS environment"
     exit 1
