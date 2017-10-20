@@ -42,6 +42,17 @@ if [  ! -d ${VR_CATKIN_TARGET} ]; then
   # install from the Ubuntu `catkin` package.)
   catkin_make --pkg freemovr_engine || echo 'OK' # we expect this to fail but we need it to initialize catkin workspace (install setup.bash)
   rosdep update
+
+  source devel/setup.bash
+
+  rosdep check --default-yes --from-paths src --ignore-src -q || {
+    echo "YOU NEED TO INSTALL DEPENDENCIES. RUN THE FOLLOWING COMMANDS."
+    rosdep install --default-yes --from-paths src --ignore-src --simulate
+    exit 1
+  }
+
+  echo "all dependencies found, running catkin_make."
+
   catkin_make
   source devel/setup.bash
 else
