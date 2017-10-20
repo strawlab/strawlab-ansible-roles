@@ -20,3 +20,11 @@
 
 - name: copy installer script
   copy: src=make-freemovr-engine-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-freemovr-engine-workspace.sh owner=root group=root mode=0755
+
+# install missing deps (TODO make ansible find these from ROS packages automatically)
+- apt: name=python-pyode state=installed
+- apt: name=cython state=installed
+- apt: name=openscenegraph state=installed
+- apt: name=libopenscenegraph-dev state=installed
+- apt: name=libjansson-dev state=installed
+- apt: name=libopenexr-dev state=installed

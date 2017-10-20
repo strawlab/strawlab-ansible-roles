@@ -26,3 +26,12 @@
 
 - name: copy installer script
   copy: src=make-flydra-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-flydra-workspace.sh owner=root group=root mode=0755
+
+# install missing deps (TODO make ansible find these from ROS packages automatically)
+- apt: name=arduino-udev state=installed
+- apt: name=libglew-dev state=installed
+- apt: name=libsdl1.2-dev state=installed
+- apt: name=libcamiface-dev state=installed
+- apt: name=python-opencv state=installed
+- apt: name=python-blist state=installed
+- apt: name=arduino-mk state=installed
