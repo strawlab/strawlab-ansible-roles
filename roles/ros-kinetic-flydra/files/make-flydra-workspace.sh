@@ -15,6 +15,9 @@ if [ "$ROS_ROOT" != "" ]; then
     exit 1
 fi
 
+MINIMUM_ROSINSTALL_VERSION="0.7.5"
+rosinstall --version  | head -n 1 | python2 -c "import sys; from distutils.version import StrictVersion as V; buf=sys.stdin.read(); v=buf.split()[1]; assert V(v) >= V('${MINIMUM_ROSINSTALL_VERSION}')"
+
 UNDERLAY="/opt/ros/kinetic"
 FLYDRA_CATKIN_TARGET="$HOME/ros/flydra-kinetic"
 
