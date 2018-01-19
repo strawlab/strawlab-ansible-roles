@@ -35,3 +35,5 @@
 - apt: name=python-opencv state=installed
 - apt: name=python-blist state=installed
 - apt: name=arduino-mk state=installed
+- apt: name=gir1.2-gtk-3.0 state=installed
+- apt: name=python-gi-cairo state=installed
