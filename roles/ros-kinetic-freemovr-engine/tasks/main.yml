@@ -28,3 +28,4 @@
 - apt: name=libopenscenegraph-dev state=installed
 - apt: name=libjansson-dev state=installed
 - apt: name=libopenexr-dev state=installed
+- apt: name=python-openexr state=installed
