@@ -6,10 +6,16 @@ Tested on Ubuntu xenial (16.04) amd64.
 
 To install prerequisites:
 
-    sudo apt-get install ansible
+    sudo apt-get install git ansible
+
+Clone the strawlab-ansible-roles repository into your local drive. We recommend:
+
+    cd ~/
+    git clone https://github.com/strawlab/strawlab-ansible-roles.git
 
 To run the playbook (installs flydra and freemovr):
 
+    cd strawlab-ansible-roles/
     sudo ansible-playbook -i "localhost," -c local playbook.yml
 
 # Now, to create a ROS workspace for FreemoVR
