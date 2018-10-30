@@ -49,6 +49,7 @@ After this, you can run Flydra and FreemoVR commands such as
 OPTIONAL: You can shorten `~/ros/freemovr-kinetic/devel/setup.bash` command
 by adding an alias in your home directory. For example:
     
+    cd ~/
     echo "source ~/ros/freemovr-kinetic/devel/setup.bash" >> myros
 
 This will allow you to initiate the ROS environment using a shorter command:
