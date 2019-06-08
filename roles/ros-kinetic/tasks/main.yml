@@ -1,5 +1,13 @@
 - name: get ROS apt signing key
-  apt_key: id=B01FA116 url=http://packages.ros.org/ros.key state=present
+  apt_key:
+    id: C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+    keyserver: keyserver.ubuntu.com
+    state: present
+
+- name: remove possibly insecure ROS key, see https://discourse.ros.org/t/security-issue-on-ros-build-farm/9342/8
+  apt_key:
+    id: 421C365BD9FF1F717815A3895523BAEEB01FA116
+    state: absent
 
 - name: use ROS Ubuntu repository
   apt_repository: repo='deb http://packages.ros.org/ros/ubuntu {{ansible_lsb.codename}} main'
