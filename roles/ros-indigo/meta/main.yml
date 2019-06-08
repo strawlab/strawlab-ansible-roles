@@ -1,3 +1,0 @@
----
-dependencies:
-- { role: ansible-support-trusty }

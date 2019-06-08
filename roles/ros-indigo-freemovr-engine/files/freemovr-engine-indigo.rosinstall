@@ -1,2 +1,0 @@
-# This rosinstall file can be used to create a catkin workspace with FreemoVR.
-- git: {local-name: freemovr_engine, uri: 'https://github.com/strawlab/freemovr_engine.git', version: indigo}

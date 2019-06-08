@@ -1,4 +1,0 @@
----
-dependencies:
-- { role: ros-indigo }
-- { role: strawlab-public-debs }
