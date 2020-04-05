@@ -1,5 +1,5 @@
 - name: install flydra package
-  apt: name=python-flydra state=installed
+  apt: name=python-flydra state=latest
 
 - name: Ensure rosdep sources dir exists
   file: path=/etc/ros/rosdep/sources.list.d state=directory mode=0755 owner=root group=root
@@ -12,14 +12,14 @@
 
 - name: install sudo command
   # This is required by `rosdep install`
-  apt: name=sudo state=installed
+  apt: name=sudo state=latest
 
 - name: install wstool command
   # This is required for `wstool`
-  apt: name=python-wstool state=installed
+  apt: name=python-wstool state=latest
 
 - name: install rosinstall command
-  apt: name=python-rosinstall state=installed
+  apt: name=python-rosinstall state=latest
 
 - name: Ensure workspace installer dir exists
   file: path=/opt/ros/workspace-installers/kinetic/ state=directory mode=0755 owner=root group=root
@@ -28,12 +28,12 @@
   copy: src=make-flydra-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-flydra-workspace.sh owner=root group=root mode=0755
 
 # install missing deps (TODO make ansible find these from ROS packages automatically)
-- apt: name=arduino-udev state=installed
-- apt: name=libglew-dev state=installed
-- apt: name=libsdl1.2-dev state=installed
-- apt: name=libcamiface-dev state=installed
-- apt: name=python-opencv state=installed
-- apt: name=python-blist state=installed
-- apt: name=arduino-mk state=installed
-- apt: name=gir1.2-gtk-3.0 state=installed
-- apt: name=python-gi-cairo state=installed
+- apt: name=arduino-udev state=latest
+- apt: name=libglew-dev state=latest
+- apt: name=libsdl1.2-dev state=latest
+- apt: name=libcamiface-dev state=latest
+- apt: name=python-opencv state=latest
+- apt: name=python-blist state=latest
+- apt: name=arduino-mk state=latest
+- apt: name=gir1.2-gtk-3.0 state=latest
+- apt: name=python-gi-cairo state=latest

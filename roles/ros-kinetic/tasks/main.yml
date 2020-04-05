@@ -16,4 +16,4 @@
   apt_repository: repo='deb-src http://packages.ros.org/ros/ubuntu {{ansible_lsb.codename}} main'
 
 - name: install ROS kinetic packages
-  apt: name=ros-kinetic-desktop-full state=installed
+  apt: name=ros-kinetic-desktop-full state=latest

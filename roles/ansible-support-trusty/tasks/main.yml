@@ -6,9 +6,9 @@
   sudo: yes
 
 - name: Ensure python-pycurl is installed (prequisite for apt_repository Ansible command)
-  apt: name=python-pycurl state=installed
+  apt: name=python-pycurl state=latest
 
 # These are needed to avoid https://github.com/ansible/ansible/issues/12161
-- apt: name=curl state=installed
+- apt: name=curl state=latest
 - command: curl -O https://strawlab.org/assets/astraw-archive-keyring.gpg chdir=/etc/apt/sources.list.d creates=/etc/apt/sources.list.d/astraw-archive-keyring.gpg
 - apt_key: id=F8DB323D file=/etc/apt/sources.list.d/astraw-archive-keyring.gpg state=present

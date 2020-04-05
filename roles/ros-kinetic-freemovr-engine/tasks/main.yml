@@ -9,11 +9,11 @@
 
 - name: install sudo command
   # This is required by `rosdep install`
-  apt: name=sudo state=installed
+  apt: name=sudo state=latest
 
 - name: install wstool command
   # This is required for `wstool`
-  apt: name=python-wstool state=installed
+  apt: name=python-wstool state=latest
 
 - name: Ensure workspace installer dir exists
   file: path=/opt/ros/workspace-installers/kinetic/ state=directory mode=0755 owner=root group=root
@@ -22,10 +22,10 @@
   copy: src=make-freemovr-engine-workspace.sh dest=/opt/ros/workspace-installers/kinetic/make-freemovr-engine-workspace.sh owner=root group=root mode=0755
 
 # install missing deps (TODO make ansible find these from ROS packages automatically)
-- apt: name=python-pyode state=installed
-- apt: name=cython state=installed
-- apt: name=openscenegraph state=installed
-- apt: name=libopenscenegraph-dev state=installed
-- apt: name=libjansson-dev state=installed
-- apt: name=libopenexr-dev state=installed
-- apt: name=python-openexr state=installed
+- apt: name=python-pyode state=latest
+- apt: name=cython state=latest
+- apt: name=openscenegraph state=latest
+- apt: name=libopenscenegraph-dev state=latest
+- apt: name=libjansson-dev state=latest
+- apt: name=libopenexr-dev state=latest
+- apt: name=python-openexr state=latest
