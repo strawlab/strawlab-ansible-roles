@@ -29,7 +29,7 @@ After the installation is complete, you can remove the strawlab-ansible-roles fo
 # Now, to create a ROS workspace for FreemoVR
 
 Do this as a normal user
-    
+
     /opt/ros/workspace-installers/kinetic/make-freemovr-workspace.sh
 
 Now you should have new directories in `~/ros` with everything installed.
@@ -45,10 +45,10 @@ to start Flydra or FreemoVR.
 After this, you can run Flydra and FreemoVR commands such as
 
     roslaunch freemovr_engine demo_display_server.launch
-    
+
 OPTIONAL: You can shorten `~/ros/freemovr-kinetic/devel/setup.bash` command
 by adding an alias in your home directory. For example:
-    
+
     cd ~/
     echo "source ~/ros/freemovr-kinetic/devel/setup.bash" >> myros
 
