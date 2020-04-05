@@ -55,3 +55,8 @@ by adding an alias in your home directory. For example:
 This will allow you to initiate the ROS environment using a shorter command:
 
     source myros
+
+# License
+
+The files in this repository are licensed under the BSD 3-clause license. See
+`LICENSE.txt` for more information.
