@@ -1,5 +1,7 @@
 # strawlab-ansible-roles - recipes to install strawlab software
 
+[![build](https://github.com/strawlab/strawlab-ansible-roles/workflows/build/badge.svg?branch=master)](https://github.com/strawlab/strawlab-ansible-roles/actions?query=branch%3Amaster)
+
 Tested on Ubuntu xenial (16.04) amd64.
 
 # Installation
