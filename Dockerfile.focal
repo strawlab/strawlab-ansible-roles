@@ -1,0 +1,17 @@
+FROM ubuntu:focal
+
+# build with
+#   docker build -t strawlab-focal --file Dockerfile.focal .
+
+# run with this on Ubuntu:
+#   docker run -it -v `pwd`:/ansible:ro strawlab-focal
+# or this on Windows:
+#   docker run -it -v ${PWD}:/ansible:ro strawlab-focal
+
+RUN apt-get update && \
+    apt-get upgrade --yes && \
+    apt-get install --yes ansible
+
+VOLUME /ansible
+
+CMD ansible-playbook -vv -i "localhost," -c local /ansible/playbook-focal.yml

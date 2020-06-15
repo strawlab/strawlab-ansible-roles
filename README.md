@@ -58,6 +58,22 @@ This will allow you to initiate the ROS environment using a shorter command:
 
     source myros
 
+# Testing these recipes
+
+On Linux with bash:
+
+```
+docker build -t strawlab-focal --file Dockerfile.focal .
+docker run -it -v `pwd`:/ansible:ro strawlab-focal
+```
+
+On Windows with powershell:
+
+```
+docker build -t strawlab-focal --file Dockerfile.focal .
+docker run -it -v ${PWD}:/ansible:ro strawlab-focal
+```
+
 # License
 
 The files in this repository are licensed under the BSD 3-clause license. See

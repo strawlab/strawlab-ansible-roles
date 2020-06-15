@@ -7,16 +7,16 @@ on:
     branches: [ '**' ]
 
 jobs:
-  default:
+  focal:
 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-16.04]
+        os: [ubuntu-20.04]
 
     steps:
     - uses: actions/checkout@v2
     - name: Install ansible
       run: sudo apt-get install -y ansible
     - name: Build
-      run: sudo ansible-playbook -i "localhost," -c local playbook.yml
+      run: sudo ansible-playbook -i "localhost," -c local playbook-focal.yml
