@@ -1,0 +1,1 @@
+- apt: name=python3-flydra-core state=latest

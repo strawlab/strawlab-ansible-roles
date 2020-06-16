@@ -1,4 +1,4 @@
 ---
-    - hosts: localhost
-      roles:
-        - focal-ros-noetic-freemovr
+- hosts: localhost
+  roles:
+    - focal-ros-noetic-freemovr

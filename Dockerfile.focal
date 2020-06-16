@@ -14,4 +14,4 @@ RUN apt-get update && \
 
 VOLUME /ansible
 
-CMD ansible-playbook -i "localhost," -c local /ansible/playbook-focal.yml
+CMD ansible-playbook -vv -i "localhost," -c local /ansible/playbook-focal.yml
