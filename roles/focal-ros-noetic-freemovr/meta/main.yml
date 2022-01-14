@@ -1,4 +1,0 @@
----
-    dependencies:
-    - { role: focal-ros-noetic-freemovr-engine }
-    - { role: focal-flydra-analysis }

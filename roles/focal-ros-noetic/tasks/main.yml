@@ -7,11 +7,13 @@
     keyserver: keyserver.ubuntu.com
     state: present
 
+- name: ensure multiverse is installed
+  # According to http://wiki.ros.org/noetic/Installation/Ubuntu we need  `restricted` `universe` `multiverse`
+  apt_repository:
+    repo: 'deb http://archive.ubuntu.com/ubuntu {{ansible_lsb.codename}} main restricted universe multiverse'
+
 - name: use ROS Ubuntu repository
   apt_repository: repo='deb http://packages.ros.org/ros/ubuntu {{ansible_lsb.codename}} main'
-
-- name: use ROS Ubuntu source repository
-  apt_repository: repo='deb-src http://packages.ros.org/ros/ubuntu {{ansible_lsb.codename}} main'
 
 - name: install ROS noetic packages
   apt: name=ros-noetic-ros-base state=latest

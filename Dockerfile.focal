@@ -14,4 +14,6 @@ RUN apt-get update && \
 
 VOLUME /ansible
 
-CMD ansible-playbook -vv -i "localhost," -c local /ansible/playbook-focal.yml
+CMD ansible-playbook -vv -i "localhost," -c local /ansible/playbook-focal.yml && \
+    adduser --disabled-password --gecos "" user && \
+    su - user -c "/opt/ros/workspace-installers/noetic/make-freemovr-engine-workspace.sh"

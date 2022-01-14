@@ -1,0 +1,43 @@
+- name: Ensure rosdep sources dir exists
+  file: path=/etc/ros/rosdep/sources.list.d state=directory mode=0755 owner=root group=root
+
+- name: Ensure strawlab rosdep URL is included into rosdep sources
+  copy: src=40-strawlab-noetic.list dest=/etc/ros/rosdep/sources.list.d/40-strawlab-noetic.list owner=root group=root mode=0644
+
+- name: Ensure freemovr-engine-noetic.rosinstall is available
+  copy: src=freemovr-engine-noetic.rosinstall dest=/etc/ros/freemovr-engine-noetic.rosinstall owner=root group=root mode=0644
+
+- name: install sudo command
+  # This is required by `rosdep install`
+  apt: name=sudo state=latest
+
+- name: install wstool command
+  # This is required for `wstool`
+  apt: name=python3-wstool state=latest
+
+- name: install rosinstall command
+  # This is required for `rosinstall`
+  apt: name=python3-rosinstall state=latest
+
+- name: install rosdep command
+  # This is required for `rosdep`
+  apt: name=python3-rosdep state=latest
+
+- name: Ensure workspace installer dir exists
+  file: path=/opt/ros/workspace-installers/noetic/ state=directory mode=0755 owner=root group=root
+
+- name: copy installer script
+  copy: src=make-freemovr-engine-workspace.sh dest=/opt/ros/workspace-installers/noetic/make-freemovr-engine-workspace.sh owner=root group=root mode=0755
+
+# install missing deps (TODO make ansible find these from ROS packages automatically)
+# - apt: name=python-pyode state=latest
+- apt: name=cython state=latest
+- apt: name=openscenegraph state=latest
+- apt: name=libopenscenegraph-dev state=latest
+- apt: name=libjansson-dev state=latest
+- apt: name=libopenexr-dev state=latest
+# - apt: name=python-openexr state=latest
+
+- apt: name=ros-noetic-tf state=latest
+- apt: name=ros-noetic-tf-conversions state=latest
+- apt: name=ros-noetic-camera-calibration state=latest
