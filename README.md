@@ -2,7 +2,7 @@
 
 [![build](https://github.com/strawlab/strawlab-ansible-roles/workflows/build/badge.svg?branch=master)](https://github.com/strawlab/strawlab-ansible-roles/actions?query=branch%3Amaster)
 
-Tested on Ubuntu xenial (16.04) amd64.
+Tested on Ubuntu focal (20.04) amd64.
 
 # Installation
 
@@ -18,7 +18,7 @@ Clone the strawlab-ansible-roles repository into your local drive. We recommend:
 To run the playbook (installs flydra and freemovr):
 
     cd strawlab-ansible-roles/
-    sudo ansible-playbook -i "localhost," -c local playbook.yml
+    sudo ansible-playbook -i "localhost," -c local playbook-focal.yml
 
 This may take more than one hour to complete, aborting will result in errors.
 Sometimes running this command will return an error which may be due to events
