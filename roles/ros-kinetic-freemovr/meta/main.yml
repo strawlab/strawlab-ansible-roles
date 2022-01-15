@@ -1,4 +1,0 @@
----
-dependencies:
-- { role: ros-kinetic-freemovr-engine }
-- { role: ros-kinetic-flydra }
