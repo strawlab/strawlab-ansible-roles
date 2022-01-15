@@ -20,3 +20,5 @@ jobs:
       run: sudo apt-get install -y ansible
     - name: Build
       run: sudo ansible-playbook -i "localhost," -c local playbook-focal.yml
+    - name: Run installer script as user
+      run: /opt/ros/workspace-installers/noetic/make-freemovr-engine-workspace.sh
