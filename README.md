@@ -8,7 +8,7 @@ Tested on Ubuntu focal (20.04) amd64.
 
 To install prerequisites:
 
-    sudo apt-get install git ansible
+    sudo apt-get install git ansible build-essential
 
 Clone the strawlab-ansible-roles repository into your local drive. We recommend:
 
