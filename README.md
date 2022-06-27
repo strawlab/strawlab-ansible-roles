@@ -15,7 +15,7 @@ Clone the strawlab-ansible-roles repository into your local drive. We recommend:
     cd ~/
     git clone https://github.com/strawlab/strawlab-ansible-roles.git
 
-To run the playbook (installs flydra and freemovr):
+To run the playbook (installs freemovr):
 
     cd strawlab-ansible-roles/
     sudo ansible-playbook -i "localhost," -c local playbook-focal.yml
@@ -40,11 +40,16 @@ You can initiate your ROS environment with
 
     source ~/ros/freemovr-engine-noetic/devel/setup.bash
 
-NOTE: You have to initiate your ROS environment with the above command every time
-you open a new terminal window otherwise you will get an error when trying
-to start Flydra or FreemoVR.
+NOTE: You have to initiate your ROS environment with the above command every
+time you open a new terminal window otherwise you will get an error when trying
+to start FreemoVR. You can automate this by placing the following in
+your `$HOME/.bashrc` file:
 
-After this, you can run Flydra and FreemoVR commands such as
+    if [ -f $HOME/ros/freemovr-engine-noetic/devel/setup.bash ]; then
+        source $HOME/ros/freemovr-engine-noetic/devel/setup.bash
+    fi
+
+After this, you can run FreemoVR commands such as
 
     roslaunch freemovr_engine demo_display_server.launch
 
